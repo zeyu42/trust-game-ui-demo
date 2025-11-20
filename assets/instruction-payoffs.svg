@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="640"
+   height="360"
+   viewBox="0 0 640 360"
+   fill="none"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="instruction-payoffs.svg"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview16"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3"
+     inkscape:cx="319.61538"
+     inkscape:cy="179.61538"
+     inkscape:window-width="1592"
+     inkscape:window-height="942"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg16" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="payoff-bg"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="360"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#FDFBF7"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#F4F0EA"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <rect
+     width="640"
+     height="360"
+     fill="url(#payoff-bg)"
+     id="rect2" />
+  <g
+     font-family="Inter, 'Segoe UI', sans-serif"
+     font-size="16"
+     fill="#4B3B30"
+     id="g3">
+    <text
+       x="149.23077"
+       y="60"
+       font-weight="600"
+       text-anchor="middle"
+       id="text2">Outcome</text>
+    <text
+       x="456.15384"
+       y="60"
+       font-weight="600"
+       text-anchor="middle"
+       id="text3">Prize</text>
+  </g>
+  <g
+     transform="translate(60 80)"
+     id="g7">
+    <rect
+       x="0"
+       y="0"
+       width="520"
+       height="70"
+       rx="14"
+       fill="#FFFFFF"
+       stroke="#CFC2B3"
+       stroke-width="2"
+       id="rect3" />
+    <g
+       transform="translate(20,13.846154)"
+       id="g4">
+      <circle
+         cx="30"
+         cy="20"
+         r="20"
+         fill="#f7f1e8"
+         stroke="#4b3b30"
+         stroke-width="3"
+         id="circle3" />
+      <path
+         d="m 18,21 7,7 15,-14"
+         stroke="#4b3b30"
+         stroke-width="3"
+         fill="none"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path3" />
+    </g>
+    <g
+       transform="translate(100,13.846154)"
+       id="g5">
+      <circle
+         cx="30"
+         cy="20"
+         r="20"
+         fill="#f7f1e8"
+         stroke="#4b3b30"
+         stroke-width="3"
+         id="circle4" />
+      <path
+         d="m 18,21 7,7 15,-14"
+         stroke="#4b3b30"
+         stroke-width="3"
+         fill="none"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path4" />
+    </g>
+    <text
+       x="176.92308"
+       y="39.692307"
+       font-family="Inter, 'Segoe UI', sans-serif"
+       font-size="14px"
+       fill="#4b3b30"
+       id="text5">Both correct</text>
+    <g
+       transform="translate(330 10)"
+       id="g6">
+      <rect
+         x="0"
+         y="0"
+         width="130"
+         height="50"
+         rx="8"
+         fill="#FFFFFF"
+         stroke="#C79C4F"
+         stroke-width="2"
+         id="rect5" />
+      <text
+         x="65"
+         y="30.153847"
+         text-anchor="middle"
+         font-family="Inter, 'Segoe UI', sans-serif"
+         font-size="16px"
+         font-weight="700"
+         fill="#c0791e"
+         id="text6"
+         inkscape:label="text6">75+75</text>
+    </g>
+  </g>
+  <g
+     transform="translate(60 160)"
+     id="g11">
+    <rect
+       x="0"
+       y="0"
+       width="520"
+       height="70"
+       rx="14"
+       fill="#FFFFFF"
+       stroke="#CFC2B3"
+       stroke-width="2"
+       id="rect7" />
+    <g
+       transform="translate(20,13.846154)"
+       id="g8">
+      <circle
+         cx="30"
+         cy="20"
+         r="20"
+         fill="#f7f1e8"
+         stroke="#4b3b30"
+         stroke-width="3"
+         id="circle7" />
+      <path
+         d="m 18,21 7,7 15,-14"
+         stroke="#4b3b30"
+         stroke-width="3"
+         fill="none"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         id="path7" />
+    </g>
+    <g
+       transform="translate(100,13.846154)"
+       id="g9">
+      <circle
+         cx="30"
+         cy="20"
+         r="20"
+         fill="#f7f1e8"
+         stroke="#4b3b30"
+         stroke-width="3"
+         id="circle8" />
+      <path
+         d="M 18,10 40,30"
+         stroke="#4b3b30"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path8" />
+      <path
+         d="M 40,10 18,30"
+         stroke="#4b3b30"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path9" />
+    </g>
+    <text
+       x="176.15384"
+       y="40.46154"
+       font-family="Inter, 'Segoe UI', sans-serif"
+       font-size="14px"
+       fill="#4b3b30"
+       id="text9">Only one correct</text>
+    <g
+       transform="translate(330 10)"
+       id="g10">
+      <rect
+         x="0"
+         y="0"
+         width="130"
+         height="50"
+         rx="8"
+         fill="#FFFFFF"
+         stroke="#C79C4F"
+         stroke-width="2"
+         id="rect9" />
+      <text
+         x="63.46154"
+         y="30.923077"
+         text-anchor="middle"
+         font-family="Inter, 'Segoe UI', sans-serif"
+         font-size="16px"
+         font-weight="700"
+         fill="#c0791e"
+         id="text10">100+0</text>
+    </g>
+  </g>
+  <g
+     transform="translate(60 240)"
+     id="g16">
+    <rect
+       x="0"
+       y="0"
+       width="520"
+       height="70"
+       rx="14"
+       fill="#FFFFFF"
+       stroke="#CFC2B3"
+       stroke-width="2"
+       id="rect11" />
+    <g
+       transform="translate(20,15.384615)"
+       id="g12">
+      <circle
+         cx="30"
+         cy="20"
+         r="20"
+         fill="#f7f1e8"
+         stroke="#4b3b30"
+         stroke-width="3"
+         id="circle11" />
+      <path
+         d="M 18,10 40,30"
+         stroke="#4b3b30"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path11" />
+      <path
+         d="M 40,10 18,30"
+         stroke="#4b3b30"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path12" />
+    </g>
+    <g
+       transform="translate(100,15.384615)"
+       id="g14">
+      <circle
+         cx="30"
+         cy="20"
+         r="20"
+         fill="#f7f1e8"
+         stroke="#4b3b30"
+         stroke-width="3"
+         id="circle12" />
+      <path
+         d="M 18,10 40,30"
+         stroke="#4b3b30"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path13" />
+      <path
+         d="M 40,10 18,30"
+         stroke="#4b3b30"
+         stroke-width="3"
+         stroke-linecap="round"
+         id="path14" />
+    </g>
+    <text
+       x="176.15384"
+       y="38.923077"
+       font-family="Inter, 'Segoe UI', sans-serif"
+       font-size="14px"
+       fill="#4b3b30"
+       id="text14">Both wrong</text>
+    <g
+       transform="translate(330 10)"
+       id="g15">
+      <rect
+         x="0"
+         y="0"
+         width="130"
+         height="50"
+         rx="8"
+         fill="#FFFFFF"
+         stroke="#C79C4F"
+         stroke-width="2"
+         id="rect14" />
+      <text
+         x="64.230766"
+         y="31.692308"
+         text-anchor="middle"
+         font-family="Inter, 'Segoe UI', sans-serif"
+         font-size="16px"
+         font-weight="700"
+         fill="#c0791e"
+         id="text15">0+0</text>
+    </g>
+  </g>
+</svg>

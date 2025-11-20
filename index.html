@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two-Door Game Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="welcome-screen" class="panel active">
+      <h1>Two-Door Game Demo</h1>
+      <p>Select the demo configuration to get started.</p>
+      <form id="welcome-form" class="card">
+        <label class="field">
+          <span>Feedback condition</span>
+          <div class="options">
+            <label><input type="radio" name="feedback" value="with" required /> With feedback after each round</label>
+            <label><input type="radio" name="feedback" value="without" /> Without feedback until the end</label>
+          </div>
+        </label>
+        <label class="field">
+          <span>When should the background color change?</span>
+          <select name="treatmentRound" id="treatment-round">
+            <option value="never">Never (control)</option>
+            <option value="1">After Round 1</option>
+            <option value="4">After Round 4</option>
+            <option value="7">After Round 7</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Color to switch to</span>
+          <select name="treatmentColor" id="treatment-color">
+            <option value="#FF0000">Red (#FF0000)</option>
+            <option value="#0070FF">Blue (#0070FF)</option>
+          </select>
+        </label>
+        <button type="submit" class="primary">Continue to instructions</button>
+      </form>
+    </section>
+
+    <section id="intake-screen" class="panel">
+      <h1>General Impressions</h1>
+      <p>Please rate your agreement with the statements below.</p>
+      <form id="intake-form" class="card">
+        <ol class="likert-list">
+          <li>
+            <span>Most people are basically honest. <em>(1 = least agree, 5 = most agree)</em></span>
+            <div class="likert-options">
+              <label><input type="radio" name="q1" value="1" required />1</label>
+              <label><input type="radio" name="q1" value="2" />2</label>
+              <label><input type="radio" name="q1" value="3" />3</label>
+              <label><input type="radio" name="q1" value="4" />4</label>
+              <label><input type="radio" name="q1" value="5" />5</label>
+            </div>
+          </li>
+          <li>
+            <span>Most people are trustworthy. <em>(1 = least agree, 5 = most agree)</em></span>
+            <div class="likert-options">
+              <label><input type="radio" name="q2" value="1" required />1</label>
+              <label><input type="radio" name="q2" value="2" />2</label>
+              <label><input type="radio" name="q2" value="3" />3</label>
+              <label><input type="radio" name="q2" value="4" />4</label>
+              <label><input type="radio" name="q2" value="5" />5</label>
+            </div>
+          </li>
+          <li>
+            <span>Most people are basically good and kind. <em>(1 = least agree, 5 = most agree)</em></span>
+            <div class="likert-options">
+              <label><input type="radio" name="q3" value="1" required />1</label>
+              <label><input type="radio" name="q3" value="2" />2</label>
+              <label><input type="radio" name="q3" value="3" />3</label>
+              <label><input type="radio" name="q3" value="4" />4</label>
+              <label><input type="radio" name="q3" value="5" />5</label>
+            </div>
+          </li>
+          <li>
+            <span>Most people are trustful of others. <em>(1 = least agree, 5 = most agree)</em></span>
+            <div class="likert-options">
+              <label><input type="radio" name="q4" value="1" required />1</label>
+              <label><input type="radio" name="q4" value="2" />2</label>
+              <label><input type="radio" name="q4" value="3" />3</label>
+              <label><input type="radio" name="q4" value="4" />4</label>
+              <label><input type="radio" name="q4" value="5" />5</label>
+            </div>
+          </li>
+          <li>
+            <span>I am trustful. <em>(1 = least agree, 5 = most agree)</em></span>
+            <div class="likert-options">
+              <label><input type="radio" name="q5" value="1" required />1</label>
+              <label><input type="radio" name="q5" value="2" />2</label>
+              <label><input type="radio" name="q5" value="3" />3</label>
+              <label><input type="radio" name="q5" value="4" />4</label>
+              <label><input type="radio" name="q5" value="5" />5</label>
+            </div>
+          </li>
+          <li>
+            <span>Most people will respond in kind when they are trusted by others. <em>(1 = least agree, 5 = most agree)</em></span>
+            <div class="likert-options">
+              <label><input type="radio" name="q6" value="1" required />1</label>
+              <label><input type="radio" name="q6" value="2" />2</label>
+              <label><input type="radio" name="q6" value="3" />3</label>
+              <label><input type="radio" name="q6" value="4" />4</label>
+              <label><input type="radio" name="q6" value="5" />5</label>
+            </div>
+          </li>
+        </ol>
+        <button type="submit" class="primary">Continue</button>
+      </form>
+    </section>
+
+    <section id="instruction-screen" class="panel">
+      <div class="instruction-card card">
+        <div id="instruction-steps">
+          <div class="instruction-step" data-condition="all" data-step="1">
+            <p class="instruction-stage-label">Screen 1</p>
+            <div class="instruction-layout">
+              <div class="instruction-text">
+                <h2>The Room and the Prize</h2>
+                <p>You will be payed $2 for participating in this game. You may earn bonus payments based on the outcome of the game. In this game, 250 units of prize is worth $1.</p>
+                <p>You are paired with another participant for this game.</p>
+                <p>In front of you, there are two doors.</p>
+                <p>Behind one door is a prize (100 units).</p>
+                <p>Behind the other door is nothing (0 units).</p>
+                <p>Your goal is to choose the door with the prize. However, you cannot see behind your own doors.</p>
+              </div>
+              <div class="instruction-visual">
+                <img src="assets/instruction-setup.svg" alt="Player labeled You standing in front of two closed doors labeled A and B with a question mark above them." />
+              </div>
+            </div>
+          </div>
+
+          <div class="instruction-step" data-condition="all" data-step="2">
+            <p class="instruction-stage-label">Screen 2</p>
+            <div class="instruction-layout">
+              <div class="instruction-text">
+                <h2>Knowing Each Other&rsquo;s Doors</h2>
+                <p>Your partner is in the same situation, also facing two doors, only one of which leads to a prize.</p>
+                <p>While you cannot see what is behind your own doors, you can see behind your partner&rsquo;s doors.</p>
+                <p>You know which door your partner needs to open to win the prize.</p>
+                <p>Likewise, your partner knows which door you need to open to win the prize.</p>
+                <p>You are dependent on each other for information.</p>
+              </div>
+              <div class="instruction-visual">
+                <img src="assets/instruction-information-gap.svg" alt="Split panels labeled You and Partner showing closed doors on your side, transparent doors revealing the partner's prize, and an eye icon linking you to their prize." />
+              </div>
+            </div>
+          </div>
+
+          <div class="instruction-step" data-condition="all" data-step="3">
+            <p class="instruction-stage-label">Screen 3</p>
+            <div class="instruction-layout">
+              <div class="instruction-text">
+                <h2>Decisions to Make</h2>
+                <p>You and your partner will make two decisions in this specific order:</p>
+                <ol>
+                  <li><strong>Message:</strong> You see the correct door for your partner. You must decide whether to suggest the correct or the wrong door to your partner. Your partner also sees the correct door for you and must decide what suggestion to give you.</li>
+                  <li><strong>Choice:</strong> You must decide whether to follow their suggestion and open that door, or reject their advice and open the other one.</li>
+                </ol>
+              </div>
+              <div class="instruction-visual">
+                <img src="assets/instruction-decisions.svg" alt="Timeline graphic showing a chat bubble labeled Message leading to an icon of a hand opening a door labeled Choice, plus labelled steps 1 and 2." />
+              </div>
+            </div>
+          </div>
+
+          <div class="instruction-step" data-condition="feedback-with" data-step="4">
+            <p class="instruction-stage-label">Screen 4</p>
+            <div class="instruction-layout">
+              <div class="instruction-text">
+                <h2>Scoring and Duration</h2>
+                <p>If one of you successfully chooses the correct door and the other does not, the person who chooses the correct door will receive 100 units and the other person will receive 0 units.</p>
+                <p>If both you and your partner successfully choose the correct doors, you will each receive a decreased prize of 75 units.</p>
+                <p>Otherwise, you will both receive 0 units.</p>
+                <p>You will play this game with the same partner for <b>multiple rounds</b>. The exact number of rounds is random, so the game could end at any time.</p>
+                <p>After every round, you will open the door you chose and immediately see your prize before moving on.</p>
+              </div>
+              <div class="instruction-visual">
+                <img src="assets/instruction-payoffs.svg" alt="Table with three rows showing both correct, one correct, or both wrong outcomes and corresponding payoffs." />
+              </div>
+            </div>
+          </div>
+
+          <div class="instruction-step" data-condition="feedback-without" data-step="4">
+            <p class="instruction-stage-label">Screen 4</p>
+            <div class="instruction-layout">
+              <div class="instruction-text">
+                <h2>Scoring and Duration</h2>
+                <p>If one of you successfully chooses the correct door and the other does not, the person who chooses the correct door will receive 100 units and the other person will receive 0 units.</p>
+                <p>If both you and your partner successfully choose the correct doors, you will each receive a decreased prize of 75 units.</p>
+                <p>Otherwise, you will both receive 0 units.</p>
+                <p>You will play this game with the same partner for multiple rounds. The exact number of rounds is random, so the game could end at any time.</p>
+              </div>
+              <div class="instruction-visual">
+                <img src="assets/instruction-payoffs.svg" alt="Table with three rows showing both correct, one correct, or both wrong outcomes and corresponding payoffs." />
+              </div>
+            </div>
+          </div>
+
+          <div class="instruction-step" data-condition="feedback-without" data-step="5">
+            <p class="instruction-stage-label">Screen 5</p>
+            <div class="instruction-layout">
+              <div class="instruction-text">
+                <h2>Delayed Feedback</h2>
+                <p>You will play every round back-to-back without seeing the outcome.</p>
+                <p>Only after the entire game is finished will you see how much you earned overall.</p>
+              </div>
+              <div class="instruction-visual">
+                <img src="assets/instruction-payoffs-hidden.svg" alt="Payoff table covered by a grey overlay with the words Hidden until completion." />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="instruction-footer">
+          <p id="instruction-progress" class="instruction-progress">Screen 1 of 3</p>
+          <div class="instruction-controls">
+            <button id="instruction-continue" class="primary" type="button">Continue</button>
+            <button id="begin-game" class="primary hidden" type="button">Begin Game</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="game-screen" class="panel">
+      <div class="game-header">
+        <div>
+          <h2>Round <span id="round-counter">1</span> / 10</h2>
+        </div>
+        <div class="totals single">
+          <div><span>Your total</span><strong id="player-total">0 Units</strong></div>
+        </div>
+      </div>
+
+      <div class="game-layout">
+        <div class="card decisions">
+          <div class="door-visual" id="player-door-visual"></div>
+
+          <div id="message-step" class="decision-step">
+            <h3>Step 1: Which door to suggest?</h3>
+            <p>Select which door to suggest to the other participant.</p>
+            <form id="message-form">
+              <div id="message-options" class="options"></div>
+              <button type="submit" class="primary">Confirm</button>
+            </form>
+          </div>
+
+          <div id="choice-step" class="decision-step hidden">
+            <h3>Step 2: Which door to open?</h3>
+            <p id="partner-suggestion" class="note"></p>
+            <form id="choice-form">
+              <div id="choice-options" class="options"></div>
+              <button type="submit" class="primary">Confirm</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card info">
+          <h3>Round log</h3>
+          <div id="feedback-panel" class="note muted">Results will appear here.</div>
+          <ul id="round-history"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="survey-screen" class="panel">
+      <div class="card">
+        <h2>Post-game survey</h2>
+        <p>Please answer the demographic questions below before viewing the payoff.</p>
+        <form id="survey-form">
+          <label class="field">
+            <span>Age</span>
+            <input type="number" name="age" min="18" max="120" placeholder="Numbers only" required />
+          </label>
+          <label class="field">
+            <span>Gender</span>
+            <select name="gender" id="gender-select" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="nonbinary">Non-binary</option>
+              <option value="prefer-not">Prefer not to say</option>
+              <option value="self-describe">Prefer to self-describe</option>
+            </select>
+          </label>
+          <label class="field hidden" id="gender-self-label">
+            <span>Please specify</span>
+            <input type="text" name="genderSelfDescribe" id="gender-self" placeholder="Type your description" />
+          </label>
+          <label class="field">
+            <span>Education level</span>
+            <select name="education" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="highschool">High school or less</option>
+              <option value="somecollege">Some college</option>
+              <option value="bachelors">Bachelor's degree</option>
+              <option value="graduate">Graduate or professional degree</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Annual household income</span>
+            <select name="income" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="<40k">Under $40,000</option>
+              <option value="40-80k">$40,000 – $79,999</option>
+              <option value="80-120k">$80,000 – $119,999</option>
+              <option value="120-200k">$120,000 – $199,999</option>
+              <option value="200k+">$200,000 or more</option>
+            </select>
+          </label>
+          <button type="submit" class="primary">Submit survey</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="results-screen" class="panel">
+      <div class="card">
+        <h2>Total payoff</h2>
+        <p id="final-summary"></p>
+        <div id="detailed-results"></div>
+        <button id="restart" class="secondary">Restart demo</button>
+      </div>
+    </section>
+  </div>
+  <div id="wait-overlay" class="wait-overlay">
+    <div class="wait-content">
+      <div class="spinner" aria-hidden="true"></div>
+      <p id="wait-text">Please wait...</p>
+    </div>
+  </div>
+  <div id="result-toast" class="result-toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
