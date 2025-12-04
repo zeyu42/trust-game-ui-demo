@@ -425,9 +425,9 @@ const buildResultsTable = () => {
     <thead>
       <tr>
         <th>Round</th>
-        <th>Suggested prize door</th>
-        <th>Your door</th>
-        <th>Partner door</th>
+        <th>Suggested correct door</th>
+        <th>You opened...</th>
+        <th>Your partner opened...</th>
         <th>Your payoff</th>
       </tr>
     </thead>
