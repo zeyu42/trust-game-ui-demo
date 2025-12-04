@@ -265,23 +265,31 @@ const updateFeedbackPanel = (outcome) => {
     elements.feedbackPanel.innerHTML = `Round ${outcome.roundNumber}: You opened <strong>${outcome.playerDoorChoice}</strong> ${badge} and earned ${formatCurrency(outcome.playerPayoff)}.`;
   } else {
     elements.feedbackPanel.classList.add('muted');
-    elements.feedbackPanel.textContent = 'Round recorded. Payoffs will be shown after the survey.';
+    elements.feedbackPanel.innerHTML = `Round ${outcome.roundNumber}: You opened <strong>${outcome.playerDoorChoice}</strong>. Payoff hidden.`;
   }
 };
 
 const prependHistoryEntry = (outcome) => {
   const item = document.createElement('li');
+  const truthBadge = buildBadge(outcome.toldTruth ? 'Correct tip' : 'Wrong tip', outcome.toldTruth);
+  const followed = outcome.playerDoorChoice === outcome.partnerSuggestion;
+  const followedBadge = buildBadge(followed ? 'Followed tip' : 'Defied tip', followed);
+
   if (state.config.feedbackMode === 'with') {
-    const truthBadge = buildBadge(outcome.toldTruth ? 'Correct tip' : 'Wrong tip', outcome.toldTruth);
     const doorBadge = buildBadge(outcome.playerChoseCorrect ? 'Correct door' : 'Wrong door', outcome.playerChoseCorrect);
     item.innerHTML = `
       <strong>Round ${outcome.roundNumber}</strong>
       <span>Suggested: ${outcome.playerMessage} ${truthBadge}</span>
-      <span>Opened: ${outcome.playerDoorChoice} ${doorBadge} (<b>${outcome.playerDoorChoice === outcome.partnerSuggestion ? 'Followed' : 'Didn\'t follow'}</b> partner suggestion)</span>
+      <span>Opened: ${outcome.playerDoorChoice} ${doorBadge} ${followedBadge}</span>
       <span>Payoff: ${formatCurrency(outcome.playerPayoff)}</span>
     `;
   } else {
-    item.textContent = `Round ${outcome.roundNumber} completed (result hidden).`;
+    item.innerHTML = `
+      <strong>Round ${outcome.roundNumber}</strong>
+      <span>Suggested: ${outcome.playerMessage} ${truthBadge}</span>
+      <span>Opened: ${outcome.playerDoorChoice} ${followedBadge}</span>
+      <span>Payoff: Hidden</span>
+    `;
   }
   elements.roundHistory.prepend(item);
 };
