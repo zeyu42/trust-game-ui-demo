@@ -222,6 +222,39 @@
       </div>
     </section>
 
+    <section id="comprehension-screen" class="panel">
+      <div class="card">
+        <h2>Comprehension Check</h2>
+        <p>Please answer the following questions to ensure you understand the game rules.</p>
+        
+        <div class="instruction-visual" style="max-width: 400px; margin: 0 auto 20px;">
+            <img src="assets/instruction-payoffs.svg" alt="Payoff matrix" />
+        </div>
+
+        <form id="comprehension-form">
+          <label class="field">
+            <span>1. If both players suggest the correct door and follow each other's suggestion, Player A will receive:</span>
+            <select name="q1" required>
+                <option value="" disabled selected>Select...</option>
+                <option value="0">0 units</option>
+                <option value="75">75 units</option>
+                <option value="100">100 units</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>2. If both players suggest the wrong door, and Player A follows B's suggestion but B doesn't follow A's suggestion, Player B will receive:</span>
+            <select name="q2" required>
+                <option value="" disabled selected>Select...</option>
+                <option value="0">0 units</option>
+                <option value="75">75 units</option>
+                <option value="100">100 units</option>
+            </select>
+          </label>
+          <button type="submit" class="primary">Submit</button>
+        </form>
+      </div>
+    </section>
+
     <section id="game-screen" class="panel">
       <div class="game-header">
         <div>

@@ -36,6 +36,7 @@ const elements = {
   restartButton: document.getElementById('restart'),
   waitOverlay: document.getElementById('wait-overlay'),
   waitText: document.getElementById('wait-text'),
+  comprehensionForm: document.getElementById('comprehension-form'),
 };
 
 const state = {
@@ -546,7 +547,23 @@ elements.welcomeForm.addEventListener('submit', (event) => {
 
 elements.beginGame.addEventListener('click', () => {
   if (!state.config) return;
-  startGame();
+  showPanel('comprehension-screen');
+});
+
+elements.comprehensionForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const q1 = formData.get('q1');
+  const q2 = formData.get('q2');
+
+  if (q1 === '75' && q2 === '100') {
+    startGame();
+  } else {
+    alert('Incorrect answers. Please review the instructions again.');
+    elements.comprehensionForm.reset();
+    prepareInstructionSequence();
+    showPanel('instruction-screen');
+  }
 });
 
 if (elements.instructionContinue) {
